@@ -26,8 +26,8 @@ SSAFY 15기 · 백엔드/인프라와 프론트엔드를 오가며, **운영 가
 | 프로젝트 | 기간 | 한 줄 소개 | 역할 | 스택 |
 |---|---|---|---|---|
 | [**LIGHT 홈페이지**](projects/01-light-homepage) | 2026.08 ~ 진행 중 | 교회 청년부 공개 홈페이지 + 회원 포털 (인프라 비용 $0) | 프론트엔드 · 인프라 · CI/CD | Next.js 16, Spring Boot 3, PostgreSQL |
-| [**Potner**](projects/02-potner) | 2026 · SSAFY 공통 | 스스로 물 주고 대화하는 반려식물 AIoT 로봇 | 장치 스테이션 전담 · LLM 대화 | Raspberry Pi, ROS2, MQTT, Spring Boot |
-| [**Circular Fashion**](projects/03-circular-fashion) | 2026 · SSAFY 특화 | 폐원단 업사이클 P2P 마켓 + 블록체인 이력 추적 | 인프라 · 지갑 인증 · 소재 도메인 | Spring Boot, React, Solidity, Jenkins |
+| [**Potner**](projects/02-potner) | 2026.07 ~ 08 · SSAFY 공통 | 스스로 물 주고 대화하는 반려식물 AIoT 로봇 | 장치 스테이션 전담 · LLM 대화 | Raspberry Pi, ROS2, MQTT, Spring Boot |
+| [**Circular Fashion**](projects/03-circular-fashion) | 2026.08 ~ 09 · SSAFY 특화 | 폐원단 업사이클 P2P 마켓 + 블록체인 이력 추적 | 인프라 · 지갑 인증 · 소재 도메인 | Spring Boot, React, Solidity, Jenkins |
 | [**SSAFY 급식봇**](projects/04-ssafy-lunch-bot) | 2026.08 ~ 09 | 매일 점심 메뉴·사진을 Mattermost로 자동 전송 | 1인 개발 | Python, GitHub Actions |
 
 각 프로젝트 폴더에 **문제 → 해결 → 결과** 중심의 상세 정리가 있습니다.

@@ -3,6 +3,7 @@
 > 버려질 패션 소재가 새로운 제품으로 순환하도록 연결하고, 그 과정을 검증 가능한 이력으로 남기는 서비스
 > SSAFY 15기 프로젝트 · 6인 팀
 
+- **기간**: 2026.08 ~ 2026.09
 - **저장소**: [gbw11/circular-fashion](https://github.com/gbw11/circular-fashion) (팀 GitLab 결과물을 모은 포트폴리오용 스냅샷)
 - **담당**: 인프라(DevOps) → User/Wallet 인증 → 소재(Material) 관리 도메인
 
