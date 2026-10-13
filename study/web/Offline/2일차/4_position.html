@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        p, div{
+            width: 500px;
+            height: 200px;
+            background-color: skyblue;
+            border: 1px solid black;
+        }
+        /* sticky와 fixed의 차이 */
+        /* fixed는 특정 위치에 항상 고정 */
+        /* sticky는 스크롤 내리다가 임계점에서 고정(fixed) */
+
+        #sticky{
+            position: sticky;
+            top: 20px;
+        }
+
+        #fixed{
+            width: 100px;
+            height: 100px;
+            background-color: brown;
+            position: fixed;
+            /* 웹브라우저의 오른쪽 끝, 위 끝에서 30px 떨어지게 */
+            right: 30px;
+            top: 30px;
+        }
+
+        /* static을 지정하지 않아도 기존과 동일 
+        굳이 필요없음*/
+        #static{
+            position: static;
+        }
+
+        /* 자신의 기존위치(static)를 기준으로 relative */
+        #relative{
+            position: relative;
+            /* 원래 위치에서 왼쪽이 300px 띄우고 위에를 200px 띄우고 */
+            left: 300px;
+            top: 200px;
+
+        }
+        /* 가장 가까운 부모를 기준으로(static 제외) 
+        현재 가장 가까운 부모는 relative*/
+        #absolute{
+            position: absolute;
+            left: 100px;
+            top: 100px;
+        }
+
+    </style>
+</head>
+<body>
+    <!-- p태그의 기본 margin은 16px -->
+    <p id="static">static</p>
+    <p id="sticky">sticky</p>
+    <div id="relative"> relative
+        <p id="absolute"> absolute </p>
+    </div>
+    
+    <p id="fixed">fixed</p>
+</body>
+</html>

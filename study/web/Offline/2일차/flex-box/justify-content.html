@@ -1,0 +1,85 @@
+﻿<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <title>플렉스 박스 레이아웃</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <style>
+    .container {
+      display:flex;  /* 플렉스 컨테이너 지정 */
+      background-color:#eee;
+      border:1px solid #222;
+      margin-bottom:30px;
+    }
+
+    
+
+    /* 주축기준으로 align 기능을 쓰고 싶을 때 justify-content */
+
+    #opt1{
+      /* 주축 기준으로 시작점(왼쪽) */
+      justify-content: flex-start;
+    }
+    #opt2{
+      /* 주축 기준으로 끝점(오른쪽) */
+      justify-content: flex-end;
+    }
+    #opt3{
+      /* 주축 기준으로 가운데 */
+      justify-content: center;
+    }
+    #opt4{
+      /* 시작점과 끝점에 배치하고 중간항목을 같은 간격으로 배치 */
+      justify-content: space-between;
+    }    
+    #opt5{
+      /* 시작점과 끝점을 비우고 전체항목을 같은 간격으로 배치 */
+      justify-content: space-around;
+    }       
+    
+    
+
+    .box {
+      padding:5px 45px;
+      margin:5px;   
+      background-color:#222;   
+    }
+    p {
+      color:#fff;
+      text-align: center;
+    }
+  </style>
+</head>
+<body>
+  <div class="container" id="opt1">
+    <div class="box"><p>1</p></div>
+    <div class="box"><p>2</p></div>
+    <div class="box"><p>3</p></div>
+    <div class="box"><p>4</p></div>
+  </div>
+  <div class="container" id="opt2">
+    <div class="box"><p>1</p></div>
+    <div class="box"><p>2</p></div>
+    <div class="box"><p>3</p></div>
+    <div class="box"><p>4</p></div>
+  </div>
+  <div class="container"  id="opt3">
+    <div class="box"><p>1</p></div>
+    <div class="box"><p>2</p></div>
+    <div class="box"><p>3</p></div>
+    <div class="box"><p>4</p></div>
+   </div>
+  <div class="container" id="opt4">
+    <div class="box"><p>1</p></div>
+    <div class="box"><p>2</p></div>
+    <div class="box"><p>3</p></div>
+    <div class="box"><p>4</p></div>
+  </div>            
+  <div class="container" id="opt5">
+    <div class="box"><p>1</p></div>
+    <div class="box"><p>2</p></div>
+    <div class="box"><p>3</p></div>
+    <div class="box"><p>4</p></div>
+  </div>    
+</body>
+</html>

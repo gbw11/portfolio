@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        div {
+            width: 200px;
+            height: 100px;
+            /* 가로로 배치 */
+            display: inline-block;
+            border: 1px solid black;
+        }
+        #margin1{
+            /* 값 4개: 상, 우, 하, 좌 */
+            margin: 30px 50px 30px 50px;
+        }
+        #margin2{
+            /* 값 2개: 상하, 좌우 */
+            margin: 30px 50px;
+            /* 짜피 마진상쇄(중첩)가 일어나기 때문에 아래코드는 잘 안씀 */
+            /* margin-right: 30px;
+            margin-left: 50px; */
+        }
+    </style>
+</head>
+<body>
+    <!-- div#margin1+div#margin2 -->
+    <div id="margin1"></div>
+    <div id="margin2"></div>
+</body>
+</html>

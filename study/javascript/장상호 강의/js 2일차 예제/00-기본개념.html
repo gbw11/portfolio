@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+
+  <script>
+  // Data Type of Js
+    //1. 원시자료형과 참조자료형의 차이
+      // 원시자료형 : Number, String, Boolean, null, undefined
+      // 값이 복사 => 불변 자료형
+
+      // 참조 자료형 : Objects(객체, 배열, 함수)
+      // 값의 주소가 복사 => 가변 자료형
+
+
+
+    //2. null, undefined, NaN 차이
+      // null(python의 None과 같음) - 값을 의도적으로 비움 
+      const user = null
+      console.log(user)
+
+      // undefined - 값이 할당되지 않았다.
+      let name
+      console.log(name)
+
+      // NaN(Not a Number) - 숫자가 아닌 계산 결과
+      console.log('hello' * 2)
+      console.log(0/0)
+
+
+    //3. 동등연산자(==)와 일치연산자(===)의 차이
+      // 동등연산자는 암묵적인 타입 변환이 이루어진다.
+      // 일치연산자는 값, 데이터 타입 2개가 모두 일치되어야 한다.
+      console.log(0 == false) // true
+      console.log(0 === false) // false
+
+
+    //4. 논리연산자
+      // && : python의 and
+      // || : python의 or
+      // ! : python의 not
+
+      // 단축평가!!!
+      console.log(1 && 3) // 3
+      console.log(1 || 3) // 1
+      console.log(!1) // false
+
+  
+  </script>
+
+</body>
+</html>

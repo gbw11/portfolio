@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+
+  <body>
+    <h1>로또 추천 번호</h1>
+    <button id="btn">행운 번호 받기</button>
+    <div></div>
+
+    <script src="https://cdn.jsdelivr.net/npm/lodash@4.17.21/lodash.min.js"></script>
+    <script>
+      // 1. 필요한 요소 선택
+      const btnTag = document.querySelector('#btn')
+      const divTag = document.querySelector('div')
+      // 2. 로또 번호를 화면에 출력하는 함수 (이벤트 핸들러)
+      const getLottoHandler = function(event){
+        // 2.1 1부터 45까지의 배열 생성
+        const numbers = _.range(1, 46)
+        // 2.2 45개의 요소가 있는 배열에서 6개 번호 추출
+        const sixNumbers = _.sampleSize(numbers, 6)
+        // 2.3 6개의 li를 담을 ul 태그를 만들자.
+        const ulTag = document.createElement('ul')
+
+        // 2.4 sixNumbers를 순회하면서 각 번호를 li 태그로 만들고, ul에 추가한다.
+        sixNumbers.forEach((number)=>{
+          const liTag = document.createElement('li')
+          liTag.textContent = number
+          ulTag.appendChild(liTag)
+        })
+        divTag.appendChild(ulTag)
+      
+      
+      }
+      // 3. 버튼 요소에 이벤트 핸들러를 등록
+      btnTag.addEventListener('click', getLottoHandler)
+    </script>
+  </body>
+</html>

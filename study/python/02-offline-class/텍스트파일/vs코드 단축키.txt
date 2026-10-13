@@ -1,0 +1,17 @@
+win + shift + s : screenshot
+ctrl + , : settings
+ctrl + s : 저장
+ctrl + b : 사이드바 열고 닫고
+ctrl + `  : 터미널 열고 닫고
+ctrl + w : 창끄기
+
+ctrl + a : 전체 블록 지정
+ctrl + l : 한줄 블록 지정
+ctrl + f : 검색
+ctrl + shift + f : 전체 파일에서 검색
+ctrl + h : 검색 후 수정
+ctrl + shift + p : 명령 팔레트
+ctrl + / : 주석
+alt + shift + 방향키 : 한줄복사붙여넣기
+alt + 마우스좌클릭 : 커서 여러개
+ctrl + alt + 방향키 : 커서 여러개

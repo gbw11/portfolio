@@ -1,0 +1,51 @@
+{% extends "base.html" %}
+
+{% load static%}
+
+{% block content %}
+    {% comment %} auth_login(request, form.get_user()) ---> request로 부터 온 user {% endcomment %}
+    <h3>안녕하세요. {{user.username}}님</h3>
+    <h1>박보검의 게시판</h1>
+
+    {% comment %} 사용자 인증이 되었을때(로그인이 되어있을 때) {% endcomment %}
+    {% if request.user.is_authenticated %}
+
+    <form action="{% url "accounts:logout" %}" method="POST">
+        {% csrf_token %}
+        <input type="submit" value="logout">
+    </form>
+
+    <a href="{% url "accounts:update" %}">update</a>
+
+    <form action="{% url "accounts:delete" %}" method="POST">
+        {% csrf_token %}
+        <input type="submit" value="delete your account">
+    </form>
+
+    <hr>
+    {% comment %} create가 post요청이니 게시글생성버튼은 form태그로 만들어야 할까?? {% endcomment %}
+    <a href="{% url "articles:create" %}">글쓰기</a>
+    <hr>
+
+    {% else %}
+
+        <a href="{% url "accounts:signup" %}">signup</a>
+        <a href="{% url "accounts:login" %}">login</a>
+
+    {% endif %}
+    <hr>
+    <img src="{% static "cat.jpg" %}" alt="고양이">
+    <hr>
+    
+    {% comment %} views.py에서 context로 넘겨준 key값 {% endcomment %}
+    {% comment %} DTL for문 {% endcomment %}
+    {% for article in articles %}
+        {% comment %} DTL 변수(콧수염괄호) {% endcomment %}
+        <p>글 id : {{article.pk}}</p>
+        <a href="{% url "articles:detail" article.pk %}">
+            <p>글 제목 : {{article.title}}</p>
+        </a>
+        <p>글 내용 : {{article.content}}</p>
+        <hr>
+    {% endfor %}
+{% endblock content %}

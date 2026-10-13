@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Investor Dashboard - Portfolio</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <link rel="stylesheet" href="portfolio.css">
+</head>
+<body>
+    <nav class="sticky top-0 z-50 w-full bg-white/80 backdrop-blur-md border-b border-slate-200 px-6 py-4">
+        <div class="max-w-7xl mx-auto flex justify-between items-center">
+            <div class="flex items-center gap-2">
+                <div class="w-10 h-10 bg-blue-600 rounded-xl flex items-center justify-center shadow-lg shadow-blue-200">
+                    <i data-lucide="trending-up" class="text-white"></i>
+                </div>
+                <span class="text-xl font-black text-slate-800 tracking-tight">INVEST<span class="text-blue-600">HUB</span></span>
+            </div>
+            <div class="flex items-center gap-1 bg-slate-100 p-1 rounded-2xl border border-slate-200">
+                <a href="profile.html" class="px-4 sm:px-6 py-2 rounded-xl text-sm font-bold text-slate-500 hover:text-slate-800 transition-all">기본 정보</a>
+                <a href="portfolio.html" class="px-4 sm:px-6 py-2 rounded-xl text-sm font-bold bg-white text-blue-600 shadow-sm border border-slate-200">포트폴리오</a>
+            </div>
+        </div>
+    </nav>
+
+    <main class="max-w-4xl mx-auto p-6 md:p-10 space-y-8">
+        <section class="bg-white border border-slate-200 p-8 rounded-[2.5rem] shadow-sm">
+            <h3 class="text-xl font-bold mb-8">포트폴리오 정보 확인</h3>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                <div class="space-y-2">
+                    <label class="text-xs font-bold text-slate-400">회원 번호 (편집불가)</label>
+                    <div class="input-readonly"><span>M-2026-0082</span><i data-lucide="lock" size="14"></i></div>
+                </div>
+                <div class="space-y-2">
+                    <label class="text-xs font-bold text-slate-400">아이디 (편집불가)</label>
+                    <div class="input-readonly"><span>ssafy_user</span><i data-lucide="lock" size="14"></i></div>
+                </div>
+            </div>
+        </section>
+
+        <section class="bg-white border border-slate-200 p-8 rounded-[2.5rem] shadow-sm">
+            <h3 class="text-xl font-bold mb-8 text-blue-600">저축 스타일 선택</h3>
+            <div class="grid grid-cols-1 sm:grid-cols-3 gap-6">
+                <button class="saving-card active">
+                    <i data-lucide="check-circle-2" class="icon-active"></i>
+                    <p class="card-title">짠테크형</p>
+                    <p class="card-desc">지출을 최대한 아껴요.</p>
+                </button>
+                <button class="saving-card">
+                    <i data-lucide="circle" class="icon-inactive"></i>
+                    <p class="card-title">중립형</p>
+                    <p class="card-desc">쓸 때는 쓰는 균형파.</p>
+                </button>
+                <button class="saving-card">
+                    <i data-lucide="circle" class="icon-inactive"></i>
+                    <p class="card-title">플렉스형</p>
+                    <p class="card-desc">즐거움을 위해 소비해요.</p>
+                </button>
+            </div>
+            <div class="mt-10">
+                <label class="text-sm font-bold text-slate-600 mb-2 block">최애 은행</label>
+                <input type="text" value="싸피뱅크" class="input-bank">
+            </div>
+        </section>
+    </main>
+    <script>
+        lucide.createIcons();
+        const cards = document.querySelectorAll('.saving-card');
+        cards.forEach(card => {
+            card.addEventListener('click', () => {
+                cards.forEach(c => {
+                    c.classList.remove('active');
+                    c.querySelector('i').setAttribute('data-lucide', 'circle');
+                    c.querySelector('i').className = 'icon-inactive mb-4';
+                });
+                card.classList.add('active');
+                card.querySelector('i').setAttribute('data-lucide', 'check-circle-2');
+                card.querySelector('i').className = 'icon-active mb-4';
+                lucide.createIcons();
+            });
+        });
+    </script>
+</body>
+</html>

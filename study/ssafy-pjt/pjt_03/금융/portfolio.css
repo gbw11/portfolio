@@ -1,0 +1,28 @@
+@import url('https://cdn.jsdelivr.net/gh/orioncactus/pretendard/dist/web/static/pretendard.css');
+
+body { font-family: 'Pretendard', sans-serif; background-color: #F8FAFC; color: #1E293B; }
+
+.input-readonly {
+    display: flex; justify-content: space-between; align-items: center;
+    background-color: #F1F5F9; border: 1px solid #E2E8F0; padding: 1rem;
+    border-radius: 1rem; color: #94A3B8; font-size: 0.875rem;
+}
+
+.saving-card {
+    padding: 2rem; border-radius: 1.5rem; border: 2px solid #F1F5F9; 
+    background-color: #F8FAFC; text-align: left; transition: all 0.2s;
+}
+.saving-card.active { border-color: #2563EB; background-color: #EFF6FF; }
+.saving-card:hover:not(.active) { border-color: #CBD5E1; }
+
+.icon-active { color: #2563EB; margin-bottom: 1rem; }
+.icon-inactive { color: #CBD5E1; margin-bottom: 1rem; }
+
+.card-title { font-weight: 900; font-size: 1.125rem; color: #1E293B; }
+.card-desc { font-size: 0.75rem; color: #64748B; margin-top: 0.5rem; }
+
+.input-bank {
+    width: 100%; background-color: #F8FAFC; border: 1px solid #E2E8F0; 
+    padding: 1rem; border-radius: 1rem; outline: none; transition: all 0.2s;
+}
+.input-bank:focus { border-color: #2563EB; background-color: white; }

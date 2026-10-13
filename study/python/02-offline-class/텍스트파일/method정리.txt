@@ -1,0 +1,68 @@
+'''
+# list
+lst.append(x)        # 맨 뒤에 추가
+lst.extend(iter)     # 여러 개 추가
+lst.insert(i, x)     # i번째에 삽입
+
+lst.pop()            # 마지막 요소 제거 + 반환
+lst.pop(i)           # i번째 요소 제거
+lst.remove(x)        # 값 x 제거 (첫 번째만)
+lst.clear()          # 전체 삭제
+
+lst.index(x)         # x의 인덱스
+lst.count(x)         # x 개수
+
+lst.sort()           # 오름차순 정렬
+lst.sort(reverse=True)
+lst.reverse()        # 순서 뒤집기
+
+
+# set
+s.add(x)
+s.update(iter)
+
+s.remove(x)          # 없으면 에러
+s.discard(x)         # 없어도 에러 X
+s.pop()              # 임의 제거
+s.clear()
+
+s1 | s2              # 합집합
+s1 & s2              # 교집합
+s1 - s2              # 차집합
+s1 ^ s2              # 대칭차집합
+
+s1.union(s2)
+s1.intersection(s2)
+s1.difference(s2)
+
+s1.issubset(s2)
+s1.issuperset(s2)
+
+#dict
+d[key]
+d.get(key)           # 없으면 None
+d.get(key, default)
+
+d[key] = value
+d.update({key:value})
+
+d.pop(key)
+d.popitem()          # 마지막 요소 제거
+del d[key]
+d.clear()
+
+d.keys()
+d.values()
+d.items()
+
+len(d)
+key in d
+
+#tuple
+t.index(x)
+t.count(x)
+
+t = (1, 2, 3)
+t[0]        # 접근 가능
+# t[0] = 5  ❌ 에러 (수정 불가)
+'''

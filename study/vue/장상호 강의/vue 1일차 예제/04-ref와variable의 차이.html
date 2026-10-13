@@ -1,0 +1,47 @@
+<!-- ref-vs-variable.html -->
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <!-- div#app>button+h1*2 -->
+  <div id="app">
+    <button @click="increment">값 증가</button>
+    <h1>반응형 변수 :{{count}}</h1>
+    <!-- 값은 count2도 바뀜(console.log 찍어보면) but 화면에서 바뀌는건 ref로 정의한 것만 -->
+    <h1>일반 변수 :{{count2}}</h1>
+
+  </div>
+  
+  <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+  <script>
+    const {createApp, ref} = Vue
+
+    const app = createApp({
+      setup(){
+        const count = ref(0)
+        let count2 = 0
+
+        const increment = function(){
+          count.value++
+          count2++
+        }
+        return{
+          count,
+          count2,
+          increment,
+        }
+      }
+    })
+
+  app.mount('#app')
+  </script>
+</body>
+
+</html>

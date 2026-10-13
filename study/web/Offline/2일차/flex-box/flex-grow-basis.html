@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .container {
+            display: flex;
+            width: 300px;
+            /* background-color: aquamarine; */
+            border: 2px solid black;
+        }
+        .item1, .item2, .item3, .box1, .box2, .box3 {
+            padding: 10px;
+            margin: 5px;
+            border: 1px solid black;
+        }
+
+
+        /* 여유공간을 1+2+0 = 3등분해서 item1에는 1조각주고 
+        item2에는 2조각주고 item3은 안줌 
+        합은 무조건 item 개수가 되어야함*/
+        .item1{
+            flex-grow: 1;
+        }
+        .item2{
+            flex-grow: 2;
+        }
+        .item3{
+            flex-grow: 0;
+        }
+        
+
+        .box1 {
+            flex-basis: 100px;
+        }
+        .box2 {
+            flex-basis: 200px;
+        } 
+        .box3 {
+            flex-basis: 300px;
+        }
+    </style>
+</head>
+<body>
+    <!-- div.container>div.item$*3 -->
+    <div class="container">
+        <div class="item1">item 1</div>
+        <div class="item2">item 2</div>
+        <div class="item3">item 3</div>
+    </div>
+
+    <!-- div.container>div.box$*3 -->
+    <div class="container">
+        <div class="box1">box 1</div>
+        <div class="box2">box 2</div>
+        <div class="box3">box 3</div>
+    </div>
+</body>
+</html>

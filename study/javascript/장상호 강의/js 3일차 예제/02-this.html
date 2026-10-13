@@ -1,0 +1,81 @@
+<!-- this-keyword.html -->
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <script>
+    // Method & this 예시
+    const person = {
+      name: 'Alice',
+      greeting: function () {
+        return `Hello my name is ${this.name}` // this는 person을 가리킴
+      },
+    }
+
+    console.log(person.greeting()) 
+
+
+    // 1.1 단순 호출
+    // window객체와 document객체의 차이
+    // window는 최상위 객체 window.document
+    // cocument는 web의 html
+    
+    const myFun = function(){
+      return this
+    }
+    console.log(myFun())
+    console.log(myFun().document)
+
+    // 1.2 메서드 호출
+    // 객체 안에 함수
+    const myObj = {
+      data : 1,
+      myFun(){
+        return this // this는 myObj
+      }
+    }
+    console.log(myObj.myFun())
+
+    // 2. 중첩된 함수
+    // 2.1 일반 함수
+    const myObj2 = {
+      numbers : [1, 2, 3],
+      myFunc(){
+        this.numbers.forEach(function(number) {
+          console.log(this) // 중첩 함수의 this는 window를 가리킴
+        })
+      }
+    }
+    
+    
+    // 메서드호출
+    myObj2.myFunc()
+
+
+
+    // 결론 : 화살표 함수를 써야한다.(언제? 콜백함수일때는 반드시!)
+    // 2.2 화살표 함수
+    const myObj3 = {
+      numbers : [1, 2, 3],
+      myFunc(){
+        this.numbers.forEach((number) => {
+          console.log(this) // myObj3
+        })
+      }
+    }
+
+    myObj3.myFunc()
+
+
+
+  </script>
+</body>
+
+</html>

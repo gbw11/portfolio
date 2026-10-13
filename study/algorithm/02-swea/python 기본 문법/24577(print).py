@@ -1,0 +1,6 @@
+print("###", end = " ")
+print("###")
+print("#7#", end = " ")
+print("#3#")
+print("###", end = " ")
+print("###")

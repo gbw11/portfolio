@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<style>
+  /* 시험 단골 문제
+  css 적용 우선순위 */
+  /* 
+  1. !important
+  2. inline style
+  3. selector 중에 id selector > class selector
+  4. 순서상 마지막 것이 적용
+  5. 일반 태크
+  
+  */
+  
+  p {
+    color : gray;
+  }
+
+  #red {
+    color : red;
+  }
+
+  #red {
+    color : blue;
+  }
+
+  .green {
+    color : green;
+  }
+
+  .orange{
+    color : orange !important;
+  }
+
+  
+</style>
+
+<body>
+  <!-- p#re.green*3 -->
+  <p id="red" class="green"> color? </p>
+  <p id="red" class="green" style="color:brown"> color? </p>
+  <p id="red" class="orange" style="color:brown"> color? </p>
+
+</body>
+
+</html>

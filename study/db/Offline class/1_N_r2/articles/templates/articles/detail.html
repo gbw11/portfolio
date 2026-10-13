@@ -1,0 +1,79 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+    <a href="{% url "articles:update" article.pk%}">EDIT</a>
+
+    <hr>
+
+    <form action="{% url "articles:delete" article.pk%}" method="POST">
+        {% csrf_token %}
+        <input type="submit" value="DELETE">
+    </form>
+
+    
+    <hr>
+
+    <h2>DETAIL</h2>
+    <h3>{{article.pk}}번째 게시글</h3>
+
+    <hr>
+    {% comment %} image필드가 채워져있다면 {% endcomment %}
+    {% if article.image %}
+        <img src="{{article.image.url}}" alt="업로드한 이미지">
+        <p>{{article.image.url}}</p>
+    {% endif %}
+
+    <hr>
+
+    <p>제목 : {{article.title}}</p>
+    <p>내용 : {{article.content}}</p>
+    <p>작성 시각 : {{article.created_at}}</p>
+    <p>수정 시각 : {{article.updated_at}}</p>
+    
+    {% comment %} home버튼은 어떤 태그로 만들어야 할까?
+    a태그(get요청) <-> form태그(get, poset 요청) 차이
+    데이터를 넘겨주냐 안넘겨주냐의 차이 {% endcomment %}
+
+    <h4>댓글 목록</h4>
+    <ul>
+        {% for comment in comments %}
+        <li>
+            {{comment.user}} - {{comment.content}}
+            {% comment %} 댓글 삭제 버튼이 로그인한 유저와 댓글을 쓴 유저가 같을때 만 보인다{% endcomment %}
+            {% if request.user == comment.user %}
+                <form action="{% url "articles:comments_delete" article.pk comment.pk%}" method="POST">
+                    {% csrf_token %}
+                    <input type="submit" value="댓글 삭제">
+                </form>
+            {% endif %}
+        </li>
+        {% endfor %}
+    </ul>
+
+    <hr>
+    
+    <form action="{% url "articles:comments_create" article.pk%}" method="POST">
+        {% csrf_token %}
+        {{comment_form}}
+        <input type="submit" value="댓글 생성">
+    </form>
+
+
+    <hr>
+
+    <form action="{% url "articles:likes" article.pk%}" method="POST">
+        {% csrf_token %}
+        <!-- 이미 좋아요를 눌렀다면-->
+        {% if request.user in article.like_users.all %}
+            <input type="submit" value = "좋아요 취소">
+        {% else %}
+            <input type="submit" value = "좋아요">
+        {% endif %}
+        <p> 좋아요 : {{article.like_users.all.count}}</p>
+    </form>
+
+
+    <a href="{% url "articles:index" %}">HOME</a>
+
+{% endblock content %}

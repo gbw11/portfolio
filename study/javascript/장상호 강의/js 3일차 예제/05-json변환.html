@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <script>
+    const jsObject = {
+        coffee: 'Americano',
+        iceCream: 'Cookie and cream'
+    }
+
+    // 파이썬에서 json <=> dictionary
+    // js에서는 json <=> object(객체)
+
+    //
+    // 1. 객체 => json :    JSON.stringify
+    // json => 객체 : JSON.parse()
+    
+    const objToJson = JSON.stringify(jsObject)
+    console.log(objToJson)
+    console.log(typeof objToJson) // string(json)
+
+    const objToObj = JSON.parse(objToJson)
+    console.log(objToObj)
+    console.log(typeof objToObj) // object(객체)
+  </script>
+</body>
+
+</html>

@@ -1,0 +1,36 @@
+<!-- spread-syntax.html -->
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <script>
+    // 스프레드 연산자
+    // 1. 인자 확장 (함수 호출 시)
+    const myFunc = function (x, y, z) {
+      return x + y + z
+    }
+    const numbers = [1, 2, 3]
+    // ... : 스프레드 연산자 (python의 *(asterisk))
+    console.log(myFunc(...numbers))
+
+
+    // 2. 나머지 매개변수 (함수 선언 시)
+    // Rest 연산자 (매개변수)
+    // 여러 인자를 배열로 묶을 때
+    const myFunc2 = function (x, y, ...restArgs){
+      return [x, y, restArgs]
+    }
+    console.log(myFunc2(1, 2, 3, 4, 5)) // 3, 4, 5가 rest연산자에 의해서 [3, 4, 5] 배열로 묶인다.
+    console.log(myFunc2(1)) // x : 1, y : undefined, ...restArgs =[] 빈배열이 들어간다
+    
+  </script>
+</body>
+
+</html>

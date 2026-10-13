@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        div {
+            /* 두께, 선종류, 색상 */
+            border: 2px solid black;
+            padding: 30px; /*border 기준으로 안*/
+            margin: 30px; /*border 기준으로 밖*/
+            /* 기존에는 content의 width와 height인데  */
+
+            /* 시험출제 */
+            /* box-sizing: border-box; 적으면 */
+            /* border랑 padding까지 포함해야 width */
+            box-sizing: border-box;
+        }
+
+        .box1{
+            width: 400px; 
+            height: 100px;
+        }
+
+        .box2{
+            /* 웹 브라우저 기준 50% */
+            width: 50%; 
+            /* height는 %를 사용하지 않는 게 좋음 */
+            height: 100px;
+
+        }
+    </style>
+</head>
+<body>
+    <div class="box1"></div>
+    <div class="box2"></div>
+</body>
+</html>
